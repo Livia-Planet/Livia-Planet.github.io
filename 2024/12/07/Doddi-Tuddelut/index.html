@@ -13,7 +13,7 @@
 
 
 
-<title>Julkalender - Läskiga Skogen: Tuddelut &amp; Doddi | Hej, jordbor!</title>
+<title>Doddi &amp; Tuddelut | Hej, jordbor!</title>
 
 
 
@@ -223,11 +223,76 @@ window.msRequestAnimationFrame ||
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Julkalender - Läskiga Skogen: Tuddelut &amp; Doddi</h1>
+            <h1 class="post-title">Doddi &amp; Tuddelut</h1>
             
                 <div class="post-meta">
                     
@@ -236,14 +301,14 @@ window.msRequestAnimationFrame ||
 
                     
                         <span class="post-time">
-                        Date: <a href="#">December 6, 2024&nbsp;&nbsp;1:16:23</a>
+                        Date: <a href="#">December 7, 2024&nbsp;&nbsp;0:08:27</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/design/">design</a>
+                                <a href="/categories/karaktar/">karaktär</a>
                             
                         </span>
                     
@@ -252,10 +317,46 @@ window.msRequestAnimationFrame ||
         </header>
 
         <div class="post-content">
-            <p>🌟🎅 - <strong>Kom, kom! Julberget väntar – med sång och magi!</strong></p>
-<p>Långt inne i den mystiska <strong>Läskiga Skogen</strong> står Julberget – en jättestor, varm och fnittrig jultomtemössa! Här sjunger träden mjuka hummande melodier, och skogens lysande stjärnstenar dansar i takt. Lilla <strong>Doddi.D</strong> bor här, men varje jul blir hon <strong>Tuddelut.E</strong> – den hemliga hjälten som sprider julens glädje till alla små kaniner.🥰</p>
-<p>Vad gömmer sig bakom dagens lucka? Kanske en fnissig skogssång, en magisk lavasten eller en dansande julklapp? Följ med Tuddelut och Doddi på deras knasiga och varma juläventyr – där snön virvlar, skogen sjunger och skrattet aldrig tar slut! 🎄🎶✨</p>
-<p><img src="https://s2.loli.net/2024/12/06/nL4y2BhZwRpAUta.png" alt="pic"><img src="https://s2.loli.net/2024/12/06/RExQW195vdqZjtH.png" alt="pic"></p>
+            <h3 id="Tuddelut-E-Jultomtens-budbarare"><a href="#Tuddelut-E-Jultomtens-budbarare" class="headerlink" title="Tuddelut.E (Jultomtens budbärare)"></a><strong>Tuddelut.E</strong> (Jultomtens budbärare)</h3><ul>
+<li><p>Tuddelut.E är en magisk liten kanin som bara dyker upp under julen. Hon bor högt uppe på Julberget i Kaninplanetens mystiska Skräckskog. På ytan verkar hon vara en mystisk och mäktig figur, men egentligen är hon Doddi.D – en helt vanlig, busig och nyfiken liten kanin som älskar att hoppa runt i skogen och leka med sina vänner. När julen närmar sig förändras dock allt.</p>
+</li>
+<li><p>När Doddi.D förvandlas till Tuddelut.E fylls hon av en magisk energi som får henne att lysa som en stjärna. Hon sjunger sånger som får hela skogen att vakna till liv, och hennes mjuka ljus leder henne till de små kaninbarnen för att sprida glädje och kärlek. Doddi.D vet dock inte att hon är den som bär tomtens gåvor och välsignelser. För Tuddelut.E känns det bara som att hon följer sitt hjärta och gör vad som känns rätt.</p>
+</li>
+<li><p><strong>Egenskaper</strong>:</p>
+</li>
+<li><p><strong>Modig och mystisk:</strong> När hon blir Tuddelut.E är hon orädd och står alltid i centrum för äventyren.</p>
+</li>
+<li><p><strong>Magisk sång:</strong> Hennes sånger är fyllda av värme och gör att skogen “sjunger tillbaka” i mjuka ekon.</p>
+</li>
+<li><p><strong>Ljusets bärare:</strong> Hennes glödande energi lyser upp även de mörkaste hörn av Skräckskogen.<br> <img src="https://s2.loli.net/2024/12/07/y4H2zLt6pkjodKC.png" alt="pic"></p>
+</li>
+</ul>
+<hr>
+<h3 id="Doddi-D-Hennes-vardagliga-namn"><a href="#Doddi-D-Hennes-vardagliga-namn" class="headerlink" title="Doddi.D (Hennes vardagliga namn)"></a><strong>Doddi.D</strong> (Hennes vardagliga namn)</h3><ul>
+<li><p>Doddi.D är Tuddelut.E:s vardagliga identitet – en liten kanin som egentligen inte är särskilt modig. Hon är ofta lite rädd för mörka platser och höga ljud, vilket gör att hon alltid undviker Skräckskogens allra läskigaste hörn. Trots detta är hon full av upptäckarglädje och älskar att samla löv, stenar och ibland små gnistrande föremål som hon hittar på sina äventyr.</p>
+</li>
+<li><p>Doddi är också en väldigt omtänksam liten kanin som alltid hjälper sina vänner när de behöver det. Hon må vara lite försiktig och osäker ibland, men hon har ett stort hjärta och älskar att se andra glada. Hennes vänner säger ofta att “Doddi har en liten kropp, men ett stort mod gömt inuti.” Och kanske är det just därför hon, när julen närmar sig, förvandlas till Tuddelut.E.</p>
+</li>
+<li><p><strong>Egenskaper:</strong></p>
+</li>
+<li><p><strong>Försiktig:</strong> Doddi.D är lite blyg och rädd för det okända, särskilt mörka hörn i Skräckskogen.</p>
+</li>
+<li><p><strong>Nyfiken:</strong> Trots sin rädsla kan hon inte låta bli att undersöka allt som gnistrar eller doftar spännande.</p>
+</li>
+<li><p><strong>Omtänksam:</strong> Hon lägger alltid tid på att trösta sina vänner eller hjälpa till när något går fel.<br> <img src="https://s2.loli.net/2024/12/07/YOtwMQs73AhCebE.png" alt="pic"></p>
+</li>
+</ul>
+<hr>
+<h3 id="Tuddelut-Es-uppdrag-och-magi"><a href="#Tuddelut-Es-uppdrag-och-magi" class="headerlink" title="Tuddelut.Es uppdrag och magi"></a><strong>Tuddelut.Es uppdrag och magi</strong></h3><ul>
+<li><p>Varje jul förvandlas Doddi.D till Tuddelut.E, och det är då hon verkligen hittar sitt mod. Som Tuddelut.E är hon Kaninplanetens julhjärta – hon bär med sig tomtens gåvor, sjunger sånger som väcker skogen till liv och delar med sig av värme till alla kaniner. Skogens träd gnistrar av hennes ljus, och små gnistor från hennes magi lägger sig som stjärnor på marken.</p>
+</li>
+<li><p><strong>Sångens kraft:</strong> Hennes mjuka sånger innehåller en magi som får hela Skräckskogen att dansa. Även de mest skygga varelserna vågar sig fram för att lyssna.</p>
+</li>
+<li><p><strong>Värmens ljus:</strong> Tuddelut.E sprider ett ljus som inte bara lyser upp, utan också värmer hjärtan och skapar hopp.</p>
+</li>
+<li><p><strong>Ett osynligt band:</strong> Även om Doddi inte vet om det själv, är det hennes kärlek och omtanke som gör henne till den perfekta Jultomtens budbärare.</p>
+</li>
+</ul>
 
         </div>
 
@@ -270,7 +371,7 @@ window.msRequestAnimationFrame ||
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://livia-planet.github.io/2024/12/06/Julkalender-Laskiga-Skogen-Tuddelut-Doddi/">http://livia-planet.github.io/2024/12/06/Julkalender-Laskiga-Skogen-Tuddelut-Doddi/</a></span>
+                        <span><a href="http://livia-planet.github.io/2024/12/07/Doddi-Tuddelut/">http://livia-planet.github.io/2024/12/07/Doddi-Tuddelut/</a></span>
                     </p>
                 
                 
@@ -298,10 +399,6 @@ window.msRequestAnimationFrame ||
                     
                         <a href="/tags/bosatt/"># bosatt</a>
                     
-                        <a href="/tags/design/"># design</a>
-                    
-                        <a href="/tags/Julkalender/"># Julkalender</a>
-                    
                         <a href="/tags/Tuddelut/"># Tuddelut</a>
                     
                         <a href="/tags/Doddi/"># Doddi</a>
@@ -311,6 +408,10 @@ window.msRequestAnimationFrame ||
                         <a href="/tags/julklapp/"># julklapp</a>
                     
                         <a href="/tags/julaventyr/"># juläventyr</a>
+                    
+                        <a href="/tags/Julafton/"># Julafton</a>
+                    
+                        <a href="/tags/Jul/"># Jul</a>
                     
                         
                 </span>
@@ -323,10 +424,8 @@ window.msRequestAnimationFrame ||
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/12/07/Doddi-Tuddelut/">Doddi & Tuddelut</a>
             
-            
-            <a class="next" rel="next" href="/2024/12/06/Pluttisarna-Bobu-i-Mars/">Pluttisarna & Bobu i Mars.</a>
+            <a class="next" rel="next" href="/2024/12/06/Julkalender-Laskiga-Skogen-Tuddelut-Doddi/">Julkalender - Läskiga Skogen: Tuddelut & Doddi</a>
             
         </section>
 
