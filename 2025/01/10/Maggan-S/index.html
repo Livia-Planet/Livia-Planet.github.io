@@ -13,7 +13,7 @@
 
 
 
-<title>Gott nytt år 2025 | Hej, jordbor!</title>
+<title>Maggan.S | Hej, jordbor!</title>
 
 
 
@@ -223,11 +223,76 @@ window.msRequestAnimationFrame ||
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Gott nytt år 2025</h1>
+            <h1 class="post-title">Maggan.S</h1>
             
                 <div class="post-meta">
                     
@@ -236,14 +301,14 @@ window.msRequestAnimationFrame ||
 
                     
                         <span class="post-time">
-                        Date: <a href="#">January 7, 2025&nbsp;&nbsp;0:14:53</a>
+                        Date: <a href="#">January 10, 2025&nbsp;&nbsp;1:31:54</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/illustration/">illustration</a>
+                                <a href="/categories/karaktar/">karaktär</a>
                             
                         </span>
                     
@@ -252,7 +317,20 @@ window.msRequestAnimationFrame ||
         </header>
 
         <div class="post-content">
-            <p>🎀🎈 <strong>Hej, jordbor! Gott nytt år 2025, gissa vem jag är!</strong> 🎈🎀<br><img src="https://s2.loli.net/2025/01/07/1Vj2PsbNp5o8BJA.png" alt="pic"></p>
+            <h3 id="Maggan-S-s-kaninfakta-fran-Kaninplaneten-🐇🌟"><a href="#Maggan-S-s-kaninfakta-fran-Kaninplaneten-🐇🌟" class="headerlink" title="Maggan.S:s kaninfakta från Kaninplaneten 🐇🌟"></a><strong>Maggan.S:s kaninfakta från Kaninplaneten</strong> 🐇🌟</h3><p>🌟 <strong>Namn</strong>: Maggan.S<br>🎨 <strong>Utseende</strong>: Han bär alltid ett sportigt pannband och ser lite sur ut, som om han tänker “Rör mig inte!” 😤 Men egentligen är han rätt cool! 💪  </p>
+<p><img src="https://s2.loli.net/2025/01/10/lI9MAr7qxYhUepa.png" alt="pic"></p>
+<p>⚡ <strong>Intressen</strong>:  </p>
+<ol>
+<li>Maggan älskar löpning! 🏃‍♂️ Han springer superfort, men han kan aldrig vara tyst. Han klagar alltid när han springer: “Vem har byggt den här vägen?!” eller “Luften i den här skogen är konstig!” 😂 Alla vet att hans klagomål egentligen är hans sätt att peppa sig själv! Heja Maggan!  </li>
+<li>Han är en trummis av rang! 🥁 När han är arg slår han på trummorna så hårt att det känns som hela Kaninplaneten skakar! Hans trumslag är lika eldiga som hans humör! 🔥</li>
+</ol>
+<p>⚡ <strong>Personlighet</strong>:<br>Maggan.S är superlättirriterad! Han blir sur för minsta lilla och älskar att gnälla, men alla vet att han egentligen är jättesnäll. ❤️ Han har fått smeknamnet “Lilla Slif” av sina vänner, eftersom Slif är en sagoliknande figur som pratar och klagar konstant på Kaninplaneten! 😜  </p>
+<hr>
+<h3 id="Sma-historier-om-Maggan-S-🌈🐾"><a href="#Sma-historier-om-Maggan-S-🌈🐾" class="headerlink" title="Små historier om Maggan.S 🌈🐾"></a><strong>Små historier om Maggan.S</strong> 🌈🐾</h3><h4 id="“Den-vulkaniska-trummisen”-Maggan-S-🥁🔥"><a href="#“Den-vulkaniska-trummisen”-Maggan-S-🥁🔥" class="headerlink" title="“Den vulkaniska trummisen” Maggan.S 🥁🔥"></a><strong>“Den vulkaniska trummisen” Maggan.S</strong> 🥁🔥</h4><p>När Maggan.S spelar trummor ser han supercool ut! 🎶 Hans rytmer är alltid så exakta och kraftfulla att hans vänner ibland skämtar och säger: “Maggan spelar trummor som om det vore en vulkan som exploderar!” 🌋 Han är bandets officiella trummis och hans vänner säger att hans humör ger bandet all energi de behöver.  </p>
+<h4 id="Loparkaninen-som-aldrig-ar-tyst-🏃‍♂️🐇"><a href="#Loparkaninen-som-aldrig-ar-tyst-🏃‍♂️🐇" class="headerlink" title="Löparkaninen som aldrig är tyst 🏃‍♂️🐇"></a><strong>Löparkaninen som aldrig är tyst</strong> 🏃‍♂️🐇</h4><p>Maggan.S springer så snabbt att ingen hänger med! Men han klagar hela vägen: “Varför är det så många gropar här?” eller “Skogens luft är inte ens fräsch!” 🍃 Hans vänner tycker att det är jättekul och ser hans gnäll som hans “hemliga löparsuperkraft”. 😂  </p>
+<h4 id="Den-lilla-gamla-gubben-i-en-kaninkropp-⏰🌟"><a href="#Den-lilla-gamla-gubben-i-en-kaninkropp-⏰🌟" class="headerlink" title="Den lilla gamla gubben i en kaninkropp ⏰🌟"></a><strong>Den lilla gamla gubben i en kaninkropp</strong> ⏰🌟</h4><p>Maggan.S stiger upp klockan 07:00 varje dag, utan undantag! ⏱️ Han säger alltid att “Att komma för sent är en brottslig handling!” och gnäller på sina vänner om de inte är i tid. Men när någon behöver hjälp, är Maggan.S alltid den första att ställa upp. Han är verkligen en vän i vått och torrt.  </p>
+<hr>
+<h3 id="Maggan-S-s-citat-🗯️✨"><a href="#Maggan-S-s-citat-🗯️✨" class="headerlink" title="Maggan.S:s citat 🗯️✨"></a><strong>Maggan.S:s citat</strong> 🗯️✨</h3><p>🌟 “Bara 15 kilometer kvar, kämpa på!” 💨<br>🌟 “Vem har spillt morotsjuice på mina trummor?! Det tar en timme att rengöra!” 🥕😤<br>🌟 “Varje löv har sin egen historia, och varje kilometer bär mina tassavtryck!” 🍃💚  </p>
 
         </div>
 
@@ -267,7 +345,7 @@ window.msRequestAnimationFrame ||
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://livia-planet.github.io/2025/01/07/Gott-nytt-ar-2025/">http://livia-planet.github.io/2025/01/07/Gott-nytt-ar-2025/</a></span>
+                        <span><a href="http://livia-planet.github.io/2025/01/10/Maggan-S/">http://livia-planet.github.io/2025/01/10/Maggan-S/</a></span>
                     </p>
                 
                 
@@ -295,9 +373,17 @@ window.msRequestAnimationFrame ||
                     
                         <a href="/tags/bosatt/"># bosatt</a>
                     
-                        <a href="/tags/Gott-nytt-ar-2025/"># Gott nytt år 2025</a>
+                        <a href="/tags/Maggan-S/"># Maggan.S</a>
                     
-                        <a href="/tags/Nakis/"># Nakis</a>
+                        <a href="/tags/idrottsstjarna/"># idrottsstjärna</a>
+                    
+                        <a href="/tags/langlopp/"># långlopp</a>
+                    
+                        <a href="/tags/maratonlopare/"># maratonlöpare</a>
+                    
+                        <a href="/tags/trummis/"># trummis</a>
+                    
+                        <a href="/tags/musikalisk-familj/"># musikalisk familj</a>
                     
                         
                 </span>
@@ -310,10 +396,8 @@ window.msRequestAnimationFrame ||
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2025/01/10/Maggan-S/">Maggan.S</a>
             
-            
-            <a class="next" rel="next" href="/2024/12/21/God-jul-2024/">God jul 2024</a>
+            <a class="next" rel="next" href="/2025/01/07/Gott-nytt-ar-2025/">Gott nytt år 2025</a>
             
         </section>
 
