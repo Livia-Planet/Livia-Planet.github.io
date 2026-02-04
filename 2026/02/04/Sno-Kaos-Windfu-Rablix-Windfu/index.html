@@ -13,7 +13,7 @@
 
 
 
-<title>Mimi.V – Den lilla stjärnkattens äventyr – 02 | Hej, jordbor!</title>
+<title>Snö Kaos! - Windfu &amp; Rablix - Windfu | Hej, jordbor!</title>
 
 
 
@@ -223,11 +223,76 @@ window.msRequestAnimationFrame ||
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Mimi.V – Den lilla stjärnkattens äventyr – 02</h1>
+            <h1 class="post-title">Snö Kaos! - Windfu &amp; Rablix - Windfu</h1>
             
                 <div class="post-meta">
                     
@@ -236,14 +301,14 @@ window.msRequestAnimationFrame ||
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 28, 2025&nbsp;&nbsp;15:46:44</a>
+                        Date: <a href="#">February 4, 2026&nbsp;&nbsp;16:48:35</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/illustration/">illustration</a>
+                                <a href="/categories/karaktar/">karaktär</a>
                             
                         </span>
                     
@@ -252,10 +317,44 @@ window.msRequestAnimationFrame ||
         </header>
 
         <div class="post-content">
-            <p>Det här är faktiskt bara en liten del av det stora projektet jag nämnde, men tyvärr… han gick innan jag var klar med det…</p>
-<p>✨Kort dikt till honom:</p>
-<p>‘En stock, en flod, ett hjärta så blått,<br> Mimi.V visar vägen vi glömt.<br> Han spinner när vi vilar,<br> och på Mars blir mörkret aldrig helt grått.’<br><img src="https://s2.loli.net/2025/11/28/sFWCkD7p1GmTw5n.png" alt="Mimi.V.png"><br><img src="https://s2.loli.net/2025/11/28/XDhkzvxnwjZBdmq.webp" alt="Mimi.V-01.webp"><br><img src="https://s2.loli.net/2025/11/28/TmcSVbJ9N34Fo8M.webp" alt="Mimi.V-02.webp"><br><img src="https://s2.loli.net/2025/11/28/spiBkaejTbPqH3x.webp" alt="Mimi.V-03.webp"><br><img src="https://s2.loli.net/2025/11/28/1upnL4DjMoQUlsx.webp" alt="Mimi.V-04.webp"></p>
+            <div style="
+  background: linear-gradient(135deg, #e0f7fa 0%, #e1f5fe 100%); 
+  border: 4px solid #b3e5fc; 
+  border-radius: 30px; 
+  padding: 20px; 
+  /* 💨 蓝色微风特效：冰蓝色的呼吸感阴影 */
+  box-shadow: 0 0 20px rgba(179, 229, 252, 0.6), inset 0 0 15px #ffffff;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  /* 🛠 宽度修正：防止遮挡右侧，居中显示 */
+  width: 95%;
+  max-width: 550px; 
+  margin: 15px auto;
+  overflow: hidden;
+">
+  <h2 style="color: #0288d1; margin-top: 10px; font-size: 1.6em;">❄️ Windfu ❄️</h2>
+  <div style="font-size: 0.9em; color: #4fc3f7; margin-bottom: 15px;">Den sömnigaste lilla profeten</div>
 
+  <div style="margin-bottom: 20px;">
+    <img src="https://s2.loli.net/2026/02/05/5WC4LlIBot3eT8N.png" 
+         style="width: 220px; border-radius: 25px; border: 3px white solid; filter: drop-shadow(0 0 10px #b3e5fc);">
+  </div>
+
+  <div style="
+    background: rgba(255, 255, 255, 0.75); 
+    border-radius: 20px; 
+    padding: 15px; 
+    line-height: 1.6; 
+    color: #01579b; 
+    font-size: 0.95em;
+    text-align: left;
+  ">
+    Hej allesammans! Det här är <b>Windfu</b>, min lilla blåa snömonster-kompis. <br><br>
+    Han är bara tre år gammal och är typ världens tröttaste kille. Han älskar varm choklad med massor av marshmallows mer än någonting annat i hela universum! ☕️☁️ <br><br>
+    Om du väcker honom försiktigt kan han ge dig en jättemysig och helande spådom eller en liten dikt. Han pratar lite långsamt och sömnigt... <br><br>
+    <center><span style="font-size: 1.2em; font-weight: bold; color: #0288d1; text-shadow: 0 0 8px #b3e5fc;">...ne, Gulu!</span></center>
+  </div>
+</div>
         </div>
 
         
@@ -269,7 +368,7 @@ window.msRequestAnimationFrame ||
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://livia-planet.github.io/2025/11/28/Mimi-V-%E2%80%93-Den-lilla-stjarnkattens-aventyr-%E2%80%93-02/">http://livia-planet.github.io/2025/11/28/Mimi-V-%E2%80%93-Den-lilla-stjarnkattens-aventyr-%E2%80%93-02/</a></span>
+                        <span><a href="http://livia-planet.github.io/2026/02/04/Sno-Kaos-Windfu-Rablix-Windfu/">http://livia-planet.github.io/2026/02/04/Sno-Kaos-Windfu-Rablix-Windfu/</a></span>
                     </p>
                 
                 
@@ -293,23 +392,17 @@ window.msRequestAnimationFrame ||
                 <span class="tag">
                     
                     
-                        <a href="/tags/kanin-planet/"># kanin planet</a>
+                        <a href="/tags/Sno-Kaos/"># Snö Kaos</a>
                     
-                        <a href="/tags/bosatt/"># bosatt</a>
+                        <a href="/tags/Windfu/"># Windfu</a>
                     
-                        <a href="/tags/happy-planet/"># happy planet</a>
+                        <a href="/tags/Rablix/"># Rablix</a>
                     
-                        <a href="/tags/katt/"># katt</a>
+                        <a href="/tags/karaktar/"># karaktär</a>
                     
-                        <a href="/tags/Mimi/"># Mimi</a>
+                        <a href="/tags/Bradspel/"># Brädspel</a>
                     
-                        <a href="/tags/Ville/"># Ville</a>
-                    
-                        <a href="/tags/dikt/"># dikt</a>
-                    
-                        <a href="/tags/soga/"># soga</a>
-                    
-                        <a href="/tags/illustration/"># illustration</a>
+                        <a href="/tags/App/"># App</a>
                     
                         
                 </span>
@@ -322,10 +415,8 @@ window.msRequestAnimationFrame ||
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2026/02/04/Sn%C3%B6%20Kaos%20-%20Windfu%20&%20Rablix%20-%20Rablix/">Snö Kaos! - Windfu & Rablix - Rablix</a>
             
-            
-            <a class="next" rel="next" href="/2025/11/28/Mimi-V-%E2%80%93-Den-lilla-stjarnkattens-aventyr-%E2%80%93-01/">Mimi.V – Den lilla stjärnkattens äventyr – 01</a>
+            <a class="next" rel="next" href="/2026/02/04/Sn%C3%B6%20Kaos%20-%20Windfu%20&%20Rablix%20-%20Rablix/">Snö Kaos! - Windfu & Rablix - Rablix</a>
             
         </section>
 
